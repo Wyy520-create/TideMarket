@@ -12,21 +12,21 @@
 
 | # | 截图 | 说明 |
 |---|------|------|
-| 01 | ![首页](docs/screenshots/01-home.jpeg) | 首页商品列表：分页、分类筛选、库存紧张标记 |
-| 02 | ![搜索](docs/screenshots/02-search.jpeg) | 关键词搜索"索尼"命中商品 |
-| 03 | ![商品详情](docs/screenshots/03-detail.jpeg) | 详情页：价格、库存、卖家、浏览次数 |
-| 04 | ![登录](docs/screenshots/04-login.jpeg) | 未登录点击购买被引导至登录页 |
-| 05 | ![登录回跳](docs/screenshots/05-login-back-detail.jpeg) | 登录后自动跳回刚才的商品详情页 |
-| 06 | ![待支付订单](docs/screenshots/06-order-pending.jpeg) | 下单成功生成待支付订单，15 分钟支付倒计时 |
-| 07 | ![模拟收银台](docs/screenshots/07-pay-modal.jpeg) | 模拟收银台弹窗 |
-| 08 | ![支付成功](docs/screenshots/08-order-paid.jpeg) | 订单变为已支付，卖家将实时收到通知 |
-| 09 | ![实时通知](docs/screenshots/09-ws-notify.jpeg) | 卖家页面实时弹出 WebSocket 通知"商品被拍下" |
-| 10 | ![通知中心](docs/screenshots/10-notifications.jpeg) | 通知中心：拍下/支付/取消/超时全记录 |
-| 11 | ![发布商品](docs/screenshots/11-publish.jpeg) | 发布闲置：填写信息 + 真实图片上传 |
-| 12 | ![发布成功](docs/screenshots/12-publish-success.jpeg) | 提交后进入审核队列，通过后自动上架 |
-| 13 | ![后台审核](docs/screenshots/13-admin-review.jpeg) | 管理后台：数据统计 + 审核队列 + 用户角色 |
-| 14 | ![审核通过](docs/screenshots/14-admin-approved.jpeg) | 点击通过后队列清空，卖家收到实时通知 |
-| 15 | ![上架可见](docs/screenshots/15-product-listed.jpeg) | 审核通过的商品立刻可以被搜索到 |
+| 01 | ![首页](https://cdn.jsdelivr.net/gh/Wyy520-create/TideMarket@main/docs/screenshots/01-home.jpeg) | 首页商品列表：分页、分类筛选、库存紧张标记 |
+| 02 | ![搜索](https://cdn.jsdelivr.net/gh/Wyy520-create/TideMarket@main/docs/screenshots/02-search.jpeg) | 关键词搜索"索尼"命中商品 |
+| 03 | ![商品详情](https://cdn.jsdelivr.net/gh/Wyy520-create/TideMarket@main/docs/screenshots/03-detail.jpeg) | 详情页：价格、库存、卖家、浏览次数 |
+| 04 | ![登录](https://cdn.jsdelivr.net/gh/Wyy520-create/TideMarket@main/docs/screenshots/04-login.jpeg) | 未登录点击购买被引导至登录页 |
+| 05 | ![登录回跳](https://cdn.jsdelivr.net/gh/Wyy520-create/TideMarket@main/docs/screenshots/05-login-back-detail.jpeg) | 登录后自动跳回刚才的商品详情页 |
+| 06 | ![待支付订单](https://cdn.jsdelivr.net/gh/Wyy520-create/TideMarket@main/docs/screenshots/06-order-pending.jpeg) | 下单成功生成待支付订单，15 分钟支付倒计时 |
+| 07 | ![模拟收银台](https://cdn.jsdelivr.net/gh/Wyy520-create/TideMarket@main/docs/screenshots/07-pay-modal.jpeg) | 模拟收银台弹窗 |
+| 08 | ![支付成功](https://cdn.jsdelivr.net/gh/Wyy520-create/TideMarket@main/docs/screenshots/08-order-paid.jpeg) | 订单变为已支付，卖家将实时收到通知 |
+| 09 | ![实时通知](https://cdn.jsdelivr.net/gh/Wyy520-create/TideMarket@main/docs/screenshots/09-ws-notify.jpeg) | 卖家页面实时弹出 WebSocket 通知"商品被拍下" |
+| 10 | ![通知中心](https://cdn.jsdelivr.net/gh/Wyy520-create/TideMarket@main/docs/screenshots/10-notifications.jpeg) | 通知中心：拍下/支付/取消/超时全记录 |
+| 11 | ![发布商品](https://cdn.jsdelivr.net/gh/Wyy520-create/TideMarket@main/docs/screenshots/11-publish.jpeg) | 发布闲置：填写信息 + 真实图片上传 |
+| 12 | ![发布成功](https://cdn.jsdelivr.net/gh/Wyy520-create/TideMarket@main/docs/screenshots/12-publish-success.jpeg) | 提交后进入审核队列，通过后自动上架 |
+| 13 | ![后台审核](https://cdn.jsdelivr.net/gh/Wyy520-create/TideMarket@main/docs/screenshots/13-admin-review.jpeg) | 管理后台：数据统计 + 审核队列 + 用户角色 |
+| 14 | ![审核通过](https://cdn.jsdelivr.net/gh/Wyy520-create/TideMarket@main/docs/screenshots/14-admin-approved.jpeg) | 点击通过后队列清空，卖家收到实时通知 |
+| 15 | ![上架可见](https://cdn.jsdelivr.net/gh/Wyy520-create/TideMarket@main/docs/screenshots/15-product-listed.jpeg) | 审核通过的商品立刻可以被搜索到 |
 
 ## 技术栈
 
@@ -211,4 +211,13 @@ cpolar http 3201
 
 ## 许可
 
-本项目采用自定义许可协议发布 —— **保留所有权利**，详见 [LICENSE](LICENSE)。
+**版权所有 (c) 2026 余阳辉（GitHub：[@Wyy520-create](https://github.com/Wyy520-create)）。保留所有权利。**
+
+本项目采用自定义许可协议发布，核心条款如下：
+
+- 本软件仅供**个人学习与技术交流**使用，不提供任何商业授权；
+- 未经著作权人书面许可，**禁止复制、修改、反编译、再发布**本软件的全部或部分，禁止用于任何商业目的；
+- 禁止删除或篡改源代码中的版权声明与署名信息；
+- 本软件按"现状"提供，**不承担任何明示或默示担保**，使用风险由使用者自负。
+
+完整协议文本见 [LICENSE](LICENSE)。
