@@ -8,25 +8,27 @@
 
 ## 功能截图
 
-以下截图均为真实浏览器交互操作的现场截取（点击、输入、下单、支付、弹窗通知）：
+以下截图均为真实浏览器交互操作的现场截取（点击、输入、下单、支付、弹窗通知）。图片经 jsDelivr CDN 加速（国内网络可直接加载）：
+
+<!-- 截图链接固定到提交 f2ed5ac；若以后重拍截图，请把链接里的 hash 同步为新提交 -->
 
 | # | 截图 | 说明 |
 |---|------|------|
-| 01 | ![首页](https://cdn.jsdelivr.net/gh/Wyy520-create/TideMarket@main/docs/screenshots/01-home.jpeg) | 首页商品列表：分页、分类筛选、库存紧张标记 |
-| 02 | ![搜索](https://cdn.jsdelivr.net/gh/Wyy520-create/TideMarket@main/docs/screenshots/02-search.jpeg) | 关键词搜索"索尼"命中商品 |
-| 03 | ![商品详情](https://cdn.jsdelivr.net/gh/Wyy520-create/TideMarket@main/docs/screenshots/03-detail.jpeg) | 详情页：价格、库存、卖家、浏览次数 |
-| 04 | ![登录](https://cdn.jsdelivr.net/gh/Wyy520-create/TideMarket@main/docs/screenshots/04-login.jpeg) | 未登录点击购买被引导至登录页 |
-| 05 | ![登录回跳](https://cdn.jsdelivr.net/gh/Wyy520-create/TideMarket@main/docs/screenshots/05-login-back-detail.jpeg) | 登录后自动跳回刚才的商品详情页 |
-| 06 | ![待支付订单](https://cdn.jsdelivr.net/gh/Wyy520-create/TideMarket@main/docs/screenshots/06-order-pending.jpeg) | 下单成功生成待支付订单，15 分钟支付倒计时 |
-| 07 | ![模拟收银台](https://cdn.jsdelivr.net/gh/Wyy520-create/TideMarket@main/docs/screenshots/07-pay-modal.jpeg) | 模拟收银台弹窗 |
-| 08 | ![支付成功](https://cdn.jsdelivr.net/gh/Wyy520-create/TideMarket@main/docs/screenshots/08-order-paid.jpeg) | 订单变为已支付，卖家将实时收到通知 |
-| 09 | ![实时通知](https://cdn.jsdelivr.net/gh/Wyy520-create/TideMarket@main/docs/screenshots/09-ws-notify.jpeg) | 卖家页面实时弹出 WebSocket 通知"商品被拍下" |
-| 10 | ![通知中心](https://cdn.jsdelivr.net/gh/Wyy520-create/TideMarket@main/docs/screenshots/10-notifications.jpeg) | 通知中心：拍下/支付/取消/超时全记录 |
-| 11 | ![发布商品](https://cdn.jsdelivr.net/gh/Wyy520-create/TideMarket@main/docs/screenshots/11-publish.jpeg) | 发布闲置：填写信息 + 真实图片上传 |
-| 12 | ![发布成功](https://cdn.jsdelivr.net/gh/Wyy520-create/TideMarket@main/docs/screenshots/12-publish-success.jpeg) | 提交后进入审核队列，通过后自动上架 |
-| 13 | ![后台审核](https://cdn.jsdelivr.net/gh/Wyy520-create/TideMarket@main/docs/screenshots/13-admin-review.jpeg) | 管理后台：数据统计 + 审核队列 + 用户角色 |
-| 14 | ![审核通过](https://cdn.jsdelivr.net/gh/Wyy520-create/TideMarket@main/docs/screenshots/14-admin-approved.jpeg) | 点击通过后队列清空，卖家收到实时通知 |
-| 15 | ![上架可见](https://cdn.jsdelivr.net/gh/Wyy520-create/TideMarket@main/docs/screenshots/15-product-listed.jpeg) | 审核通过的商品立刻可以被搜索到 |
+| 01 | ![首页](https://cdn.jsdelivr.net/gh/Wyy520-create/TideMarket@f2ed5aca3f846037fcf295008928a5965b7f362c/docs/screenshots/01-home.jpeg) | 首页商品列表：分页、分类筛选、库存紧张标记 |
+| 02 | ![搜索](https://cdn.jsdelivr.net/gh/Wyy520-create/TideMarket@f2ed5aca3f846037fcf295008928a5965b7f362c/docs/screenshots/02-search.jpeg) | 关键词搜索"索尼"命中商品 |
+| 03 | ![商品详情](https://cdn.jsdelivr.net/gh/Wyy520-create/TideMarket@f2ed5aca3f846037fcf295008928a5965b7f362c/docs/screenshots/03-detail.jpeg) | 详情页：价格、库存、卖家、浏览次数 |
+| 04 | ![登录](https://cdn.jsdelivr.net/gh/Wyy520-create/TideMarket@f2ed5aca3f846037fcf295008928a5965b7f362c/docs/screenshots/04-login.jpeg) | 未登录点击购买被引导至登录页 |
+| 05 | ![登录回跳](https://cdn.jsdelivr.net/gh/Wyy520-create/TideMarket@f2ed5aca3f846037fcf295008928a5965b7f362c/docs/screenshots/05-login-back-detail.jpeg) | 登录后自动跳回刚才的商品详情页 |
+| 06 | ![待支付订单](https://cdn.jsdelivr.net/gh/Wyy520-create/TideMarket@f2ed5aca3f846037fcf295008928a5965b7f362c/docs/screenshots/06-order-pending.jpeg) | 下单成功生成待支付订单，15 分钟支付倒计时 |
+| 07 | ![模拟收银台](https://cdn.jsdelivr.net/gh/Wyy520-create/TideMarket@f2ed5aca3f846037fcf295008928a5965b7f362c/docs/screenshots/07-pay-modal.jpeg) | 模拟收银台弹窗 |
+| 08 | ![支付成功](https://cdn.jsdelivr.net/gh/Wyy520-create/TideMarket@f2ed5aca3f846037fcf295008928a5965b7f362c/docs/screenshots/08-order-paid.jpeg) | 订单变为已支付，卖家将实时收到通知 |
+| 09 | ![实时通知](https://cdn.jsdelivr.net/gh/Wyy520-create/TideMarket@f2ed5aca3f846037fcf295008928a5965b7f362c/docs/screenshots/09-ws-notify.jpeg) | 卖家页面实时弹出 WebSocket 通知"商品被拍下" |
+| 10 | ![通知中心](https://cdn.jsdelivr.net/gh/Wyy520-create/TideMarket@f2ed5aca3f846037fcf295008928a5965b7f362c/docs/screenshots/10-notifications.jpeg) | 通知中心：拍下/支付/取消/超时全记录 |
+| 11 | ![发布商品](https://cdn.jsdelivr.net/gh/Wyy520-create/TideMarket@f2ed5aca3f846037fcf295008928a5965b7f362c/docs/screenshots/11-publish.jpeg) | 发布闲置：填写信息 + 真实图片上传 |
+| 12 | ![发布成功](https://cdn.jsdelivr.net/gh/Wyy520-create/TideMarket@f2ed5aca3f846037fcf295008928a5965b7f362c/docs/screenshots/12-publish-success.jpeg) | 提交后进入审核队列，通过后自动上架 |
+| 13 | ![后台审核](https://cdn.jsdelivr.net/gh/Wyy520-create/TideMarket@f2ed5aca3f846037fcf295008928a5965b7f362c/docs/screenshots/13-admin-review.jpeg) | 管理后台：数据统计 + 审核队列 + 用户角色 |
+| 14 | ![审核通过](https://cdn.jsdelivr.net/gh/Wyy520-create/TideMarket@f2ed5aca3f846037fcf295008928a5965b7f362c/docs/screenshots/14-admin-approved.jpeg) | 点击通过后队列清空，卖家收到实时通知 |
+| 15 | ![上架可见](https://cdn.jsdelivr.net/gh/Wyy520-create/TideMarket@f2ed5aca3f846037fcf295008928a5965b7f362c/docs/screenshots/15-product-listed.jpeg) | 审核通过的商品立刻可以被搜索到 |
 
 ## 技术栈
 
