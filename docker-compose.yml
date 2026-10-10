@@ -1,0 +1,65 @@
+name: tidemarket
+
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: tide
+      POSTGRES_PASSWORD: tide
+      POSTGRES_DB: tidemarket
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U tide"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+    # 暴露到本机 5439，方便本地开发/测试直接连接
+    ports:
+      - "5439:5432"
+
+  redis:
+    image: redis:7-alpine
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+    # 暴露到本机 6399
+    ports:
+      - "6399:6379"
+
+  backend:
+    build: ./backend
+    environment:
+      TM_DATABASE_URL: postgresql+asyncpg://tide:tide@db:5432/tidemarket
+      TM_REDIS_URL: redis://redis:6379/0
+      TM_SECRET_KEY: ${TM_SECRET_KEY:-tidemarket-dev-secret}
+      TM_UPLOAD_DIR: /data/uploads
+      TM_CORS_ORIGINS: "*"
+      TM_SEED_ON_START: "true"
+    volumes:
+      - uploads:/data/uploads
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import urllib.request;urllib.request.urlopen('http://localhost:8000/api/health')\""]
+      interval: 10s
+      timeout: 3s
+      retries: 12
+      start_period: 15s
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3201:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+
+volumes:
+  pgdata:
+  uploads:

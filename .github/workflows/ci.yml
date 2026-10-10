@@ -1,0 +1,92 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  pytest:
+    name: 后端接口测试（pytest）
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: tide
+          POSTGRES_PASSWORD: tide
+          POSTGRES_DB: tidemarket
+        ports:
+          - 5439:5432
+        options: >-
+          --health-cmd "pg_isready -U tide"
+          --health-interval 5s --health-timeout 3s --health-retries 12
+      redis:
+        image: redis:7-alpine
+        ports:
+          - 6399:6379
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 5s --health-timeout 3s --health-retries 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: backend/requirements.txt
+      - name: 安装依赖
+        working-directory: backend
+        run: pip install -r requirements.txt
+      - name: 运行 pytest（conftest 默认连服务端口 5439/6399）
+        working-directory: backend
+        run: python -m pytest -q
+
+  frontend-build:
+    name: 前端构建
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: frontend/package.json
+      - name: 安装依赖并构建
+        working-directory: frontend
+        run: |
+          npm install --no-audit --no-fund
+          npm run build
+
+  compose-smoke:
+    name: Docker Compose 冒烟
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: 构建并启动四容器
+        run: docker compose up -d --build
+      - name: 等待服务就绪
+        run: |
+          for i in $(seq 1 40); do
+            if curl -fsS http://localhost:3201/api/health > /dev/null 2>&1; then
+              echo "service is up"; exit 0
+            fi
+            sleep 3
+          done
+          echo "service failed to start"; docker compose logs; exit 1
+      - name: 冒烟检查
+        run: |
+          curl -fsS http://localhost:3201/api/health
+          echo
+          curl -fsS "http://localhost:3201/api/products?page_size=5" | grep -q '"items"'
+          echo "products ok"
+          curl -fsS -X POST http://localhost:3201/api/auth/login \
+            -H 'Content-Type: application/json' \
+            -d '{"username":"ahai","password":"ahai123456"}' | grep -q '"token"'
+          echo "login ok"
+      - name: 失败时输出日志
+        if: failure()
+        run: docker compose logs
+      - name: 清理
+        if: always()
+        run: docker compose down -v
